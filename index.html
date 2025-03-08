@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/MyLogo/aefolio_logo_light.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aeron Portfolio</title>
+    <style>
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      .reload-dark {
+        background-color: #0f172a;
+      }
+
+      .reload-light {
+        background-color: #e5e7eb;
+      }
+
+
+      #loadingContainer {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+        animation: bounce 1s ease infinite;
+      }
+
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px); 
+        }
+      }
+
+      #loadingContainer.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #logo {
+        width: 150px; 
+        height: 150px;
+      }
+
+      .no-scroll {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Loading screen container -->
+      <div id="loadingContainer">
+        <img src="src/assets/MyLogo/aefolio_logo_dark.png" id="logo" alt="Loading...">
+      </div>
+    </div>
+
+    <script type="module">
+
+        const isDark = localStorage.getItem('isDarkMode');
+
+        if (isDark === 'true') {
+          document.documentElement.classList.add('reload-dark');
+          document.documentElement.classList.remove('reload-light');
+        } else {
+          document.documentElement.classList.remove('reload-dark');
+          document.documentElement.classList.add('reload-light');
+        }
+
+      document.body.classList.add("no-scroll");
+
+      document.addEventListener("app-loaded", () => {
+        const loadingContainer = document.getElementById("loadingContainer");
+        if (loadingContainer) {
+          loadingContainer.classList.add("hide");
+          
+          setTimeout(() => {
+            loadingContainer.style.display = "none";
+          }, 500);
+        }
+        document.body.classList.remove("no-scroll");
+      });
+
+      // clear dark mode
+      // var hours = 1; 
+      // var now = new Date().getTime();
+      // var setupTime = localStorage.getItem("setupTime");
+      // if (setupTime == null) {
+      //   localStorage.setItem("setupTime", now);
+      // } else {
+      //   if (now - setupTime > hours * 60 * 60 * 1000) {
+      //     localStorage.clear();
+      //     localStorage.setItem("setupTime", now);
+      //   }
+      // }
+    </script>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

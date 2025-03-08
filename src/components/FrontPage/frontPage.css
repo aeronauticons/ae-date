@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Saira+Stencil+One);
+
+.text-position {
+  font-family: "Saira Stencil One", cursive !important;
+  text-transform: uppercase;
+
+  word-wrap: break-word;
+
+  font-size: 100px !important;
+
+  @media screen and (max-width: 1350px) {
+    font-size: 80px !important;
+  }
+
+  @media screen and (max-width: 920px) {
+    font-size: 50px !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 60px !important;
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: 50px !important;
+  }
+}
+
+.light .text-position {
+  background-color: #e6e7eb !important;
+  color: #111828 !important;
+  mix-blend-mode: screen;
+}
+
+.dark .text-position {
+  background-color: #111828 !important;
+  color: #ffffff !important;
+  mix-blend-mode: darken;
+}
+
