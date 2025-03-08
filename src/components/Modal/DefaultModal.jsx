@@ -14,7 +14,7 @@ export const DefaultModal = ({ isOpen, isClose, content: ContentComponent, data 
       >
         <LuX className="text-gray-300 text-xl lg:text-2xl xl:text-3xl" />
       </div>
-      <div className="bg-ae_contact_label rounded-xl md:max-w-xl lg:max-w-3xl w-96 lg:w-full mt-9 sm:mt-16 md:mt-10 animate-bounceOnce drop-shadow-md">
+      <div className="bg-ae_contact_label rounded-xl md:max-w-xl lg:max-w-3xl w-96 lg:w-full mt-9 sm:mt-16 md:mt-10 animate-bounceOnce drop-shadow-md pb-3">
         <div className="max-h-[90vh] overflow-y-auto">
 
           {ContentComponent && React.createElement(ContentComponent, { data })}

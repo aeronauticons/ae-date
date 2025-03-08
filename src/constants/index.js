@@ -18,16 +18,35 @@ import { FaMobileScreen, FaXTwitter } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 import { SiApachecordova, SiJavascript, SiMysql } from "react-icons/si";
 import { TbBrandVite } from "react-icons/tb";
+import { RiCss3Fill } from "react-icons/ri";
+
+// Logo
 import myLogoDark from "../assets/MyLogo/aefolio_logo_dark.png";
 import myLogoLight from "../assets/MyLogo/aefolio_logo_light.png";
+
+// Work/Nexbridge
 import NBLogo from "../assets/Work/Nexbridge/nb_logo.png";
 import NBCover from "../assets/Work/Nexbridge/nb_cover.jpg";
 import NBModalCover from "../assets/Work/Nexbridge/nb_modal_cover.jpg";
 import NBMiniLogo from "../assets/Work/Nexbridge/nb_mini_logo.png";
-import { RiCss3Fill } from "react-icons/ri";
+
+// Work/Vértere
+import VLogo from "../assets/Work/Vertere/vertere_logo.png";
+import VCover from "../assets/Work/Vertere/vertere_cover.jpg";
+import VModalCover from "../assets/Work/Vertere/vertere_mini_logo.png";
+
+// Projects/QubeApp
+import QLogo from "../assets/Projects/QubeApp/QLogo.png";
 import QubeAppLogoLight from "../assets/Projects/QubeApp/QLogoLight.png";
 import QubeAppLogoDark from "../assets/Projects/QubeApp/QLogoDark.png";
 import QubeAppImage from "../assets/Projects/QubeApp/QubeAppIamge.png";
+
+// Projects/Kapiton
+import KLogo from "../assets/Projects/Kapiton/KLogo.png";
+import KMiniLogo from "../assets/Projects/Kapiton/KMiniLogo.png";
+import KImage from "../assets/Projects/Kapiton/KapitonImage.png";
+
+// MyArts
 import coffee_art1 from "../assets/MyArts/coffee_art1.jpg";
 import flower_tulips from "../assets/MyArts/flower_tulips.jpg";
 import lion from "../assets/MyArts/lion.jpg";
@@ -39,6 +58,8 @@ import phone_case_art from "../assets/MyArts/phone_case_art.jpg";
 import tree from "../assets/MyArts/tree.jpg";
 import tree1 from "../assets/MyArts/tree1.jpg";
 import tree2 from "../assets/MyArts/tree2.jpg";
+
+// MyGames
 import dota2 from "../assets/MyGames/Dota_logo.png";
 import clash_of_clans from "../assets/MyGames/Clash_of_Clans_Logo.png";
 import mobile_legends from "../assets/MyGames/Mobile-legends-logo.png";
@@ -47,6 +68,8 @@ import basketball from "../assets/MyGames/basketball-svgrepo-com.png";
 import chess from "../assets/MyGames/chess-svgrepo-com.png";
 import jogging from "../assets/MyGames/running-run-svgrepo-com.png";
 import badminton from "../assets/MyGames/badminton.png";
+
+// Socials
 import ig1 from "../assets/Socials/ig1.jpg";
 import ig2 from "../assets/Socials/ig2.jpg";
 import ig3 from "../assets/Socials/ig3.jpg";
@@ -151,7 +174,7 @@ const aboutMe = [
   },
   {
     id: 2,
-    text: `Currently, I work as a software engineer here in the Bulacan,
+    text: `Currently, I work as a programmer analyst in Makati,
           Philippines, and I am expanding my skill set as I pursue full
           stack development.`,
   },
@@ -162,8 +185,8 @@ const aboutMe = [
   },
   {
     id: 4,
-    text: `I am actively looking for a new job where I can merge my coding
-          skills with my creativity. If you know of any openings that
+    text: `I am actively looking for opportunity where I can merge my coding
+          skills with my creativity. If you know any projects that
           might suit me, let's connect! 🔗`,
   },
 ];
@@ -225,6 +248,44 @@ const techStackDetails = `
 const myWorkExperiences = [
   {
     id: 1,
+    name: "Vértere Global Solutions",
+    logo: VLogo,
+    miniLogo: VModalCover,
+    cover: VCover,
+    modalCover: null,
+    date: "January 2025 - Present",
+    role: "Programmer Analyst",
+    link: "https://www.vertere-gs.com/",
+    responsibilities: [
+      { 
+        id: 1, 
+        text: "Engineered backend solutions" 
+      },
+      { 
+        id: 2, 
+        text: "Parsed data files into a customer specific formats." },
+      {
+        id: 3,
+        text: "Enhanced code structure to fasten processing of data files.",
+      },
+    ],
+    full_details: [
+      {
+        id: 1,
+        text: `Engineered and maintained backend solutions for web applications using the PHP, delivering scalable and efficient backend architectures.`,
+      },
+      {
+        id: 2,
+        text: `Parsed data files into a customer specific formats with Zero-defects strategy.`,
+      },
+      {
+        id: 3,
+        text: `Enhanced code structure to fasten processing and maintaining the integrity of data files.`,
+      },
+    ],
+  },
+  {
+    id: 2,
     name: "Nexbridge Technologies Inc.",
     logo: NBLogo,
     miniLogo: NBMiniLogo,
@@ -234,39 +295,47 @@ const myWorkExperiences = [
     role: "Software Engineer",
     link: "https://nexbridgetech.com/",
     responsibilities: [
-      { id: 1, text: "Engineered end-to-end full-stack solutions and APIs." },
-      { id: 2, text: "Enhanced the frontend experience for a seamless UI." },
+      { 
+        id: 1, 
+        text: "Engineered end-to-end full-stack solutions and APIs." 
+      },
+      { 
+        id: 2, 
+        text: "Enhanced the frontend experience for a seamless UI." 
+      },
       {
         id: 3,
         text: "Designed and optimized relational databases to ensure data integrity.",
       },
-      { id: 4, text: "Refactored and streamlined code structures." },
+      { 
+        id: 4, 
+        text: "Refactored and streamlined code structures." },
     ],
     full_details: [
       {
         id: 1,
         text: `Engineered end-to-end full-stack solutions and APIs for
-mobile and web applications using the Laravel PHP
-framework, delivering scalable and efficient backend
-architectures.`,
+                mobile and web applications using the Laravel PHP
+                framework, delivering scalable and efficient backend
+                architectures.`,
       },
       {
         id: 2,
         text: `Developed interactive, high-performance web
-applications utilizing ReactJS with Vite, enhancing the
-frontend experience for a seamless user interface.`,
+                applications utilizing ReactJS with Vite, enhancing the
+                frontend experience for a seamless user interface.`,
       },
       {
         id: 3,
         text: `Designed and optimized relational databases to ensure
-data integrity, improve query performance, and support
-high-traffic applications.`,
+                data integrity, improve query performance, and support
+                high-traffic applications.`,
       },
       {
         id: 4,
         text: `Refactored and streamlined code structures,
-establishing scalable and maintainable codebases across
-multiple projects.`,
+                establishing scalable and maintainable codebases across
+                multiple projects.`,
       },
     ],
   },
@@ -276,13 +345,54 @@ multiple projects.`,
 const myProjects = [
   {
     id: 1,
+    name: "Kapiton",
+    dev_type: "Collaborator-based project",
+    acronym: null,
+    desc: "Multi-vendor E-commerce platform for businesses.",
+    mini_logo: {
+      dark: KMiniLogo,
+      light: KMiniLogo,
+    },
+    logo: KLogo,
+    image: KImage,
+    githubLink: null,
+    projectLink: "https://kapiton.store/",
+    description:
+      "A large-scale e-commerce platform designed to provide a robust marketplace for businesses. This web application enhance the virtual shopping experience for customers and vendors.",
+    long_desc: `
+      A multi-vendor e-commerce that is a large-scale project/application built with Laravel framework. <br/><br/>
+      This application contains comprehensive and feature-rich modules and functionalities. It is designed to provide a robust platform for businesses to create their online marketplaces, allowing multiple vendors to sell their products and manage their stores within a single platform. <br/><br/>
+      Additionally, this application has its own dedicated extensive API, which requires authentication using Laravel Passport package. <br><br>
+      This app are composed of admin, customer and vendor components`,
+    languages: [
+      {
+        id: 1,
+        name: "Laravel",
+        icon: FaLaravel,
+      },
+      {
+        id: 2,
+        name: "HTML",
+        icon: FaHtml5,
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+        icon: SiJavascript,
+      },
+    ],
+  },
+  {
+    id: 2,
     name: "QuBE App",
+    dev_type: "Collaborator-based project",
     acronym: "Quality Board for Educators",
     desc: "Quality Board for Educators: A progressive web whiteboard application for BS Mathematics programs.",
-    logo: {
+    mini_logo: {
       dark: QubeAppLogoLight,
       light: QubeAppLogoDark,
     },
+    logo: QLogo,
     image: QubeAppImage,
     githubLink: "https://github.com/aeronauticons/QuBE-App",
     projectLink: "https://qube-app.github.io/index.html",

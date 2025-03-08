@@ -8,7 +8,7 @@ export const Experience = ({ openModal }) => {
       className="relative isolate px-6 pt-8 lg:px-8 bg-ae_background_color"
       id="experience_page"
     >
-      <TitleComponent title="Experience" id="experience_page" />
+      <TitleComponent title="Experiences" id="experience_page" />
       <MyExperienceWorks openModal={openModal}/>
     </div>
   );

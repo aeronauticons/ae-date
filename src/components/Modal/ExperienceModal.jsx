@@ -5,11 +5,11 @@ import { ThemeContext } from "../../context/ThemeContext";
 export const ExperienceModal = ({ data }) => {
 
   const { isDarkMode } = useContext(ThemeContext);
-
+  console.log(data);
   return (
     <>
       <img
-        src={data.modalCover}
+        src={data.modalCover ?? data.cover}
         className="w-full rounded-ss-xl rounded-se-xl"
       />
 
@@ -38,8 +38,8 @@ export const ExperienceModal = ({ data }) => {
           ))}
         </ul>
 
-        <div className="pb-4 px-2 mt-3">
-          <div className="flex space-x-6 items-center justify-start">
+        <div className="pb-4 px-2 mt-4">
+          <div className="flex space-x-6 items-center justify-end">
             <a
               className="flex space-x-2 items-center group cursor-pointer"
               target="_blank"

@@ -6,7 +6,7 @@ import lightBg from "./../../assets/ProfileImg/light_bg.jpg";
 import darkBg from "./../../assets/ProfileImg/dark_bg.jpg";
 import Reveal from "../plugins/Reveal";
 import { motion } from "framer-motion";
-import { isFindingJob, myRole } from "../../constants";
+import { isFindingJob, myRole, myWorkExperiences } from "../../constants";
 import { ThemeContext } from "../../context/ThemeContext";
 
 export const FrontPage = () => {
@@ -47,14 +47,14 @@ export const FrontPage = () => {
             Hello, I am Aeron Filoteo.
           </span>
           <p className="mt-3 text-lg leading-8 text-gray-600">
-            I am a software engineer based in Bulacan, Philippines, specializing
+            I am a software engineer based in the Philippines, specializing
             in both <span className="text-gray-400">Backend</span> and{" "}
             <span className="text-gray-400">Frontend</span> development.
           </p>
         </Reveal>
 
         <Reveal>
-          <div className="mb-8 flex justify-start">
+          <div className="mb-8 flex justify-center gap-x-10">
             <div className={`${!isFindingJob && 'line-through'} cursor-pointer relative rounded-full px-4 py-3 mt-4 md:text-sm text-xs text-gray-500 ring-1 ring-ae_ring_color/10 hover:ring-ae_ring_color/20`}>
               Do you want me on your team?
               <a className="font-medium text-ae_logo_color ml-3" onClick={() => handleScrollToSection("get_in_touch")}>
@@ -63,6 +63,9 @@ export const FrontPage = () => {
                 Get in touch <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
+          </div>
+          <div className={`${!isFindingJob ? 'block' : 'hidden'} text-gray-400 text-sm`}> 
+            Currently working at <span className="font-semibold text-base">{ myWorkExperiences[0].name }</span>
           </div>
         </Reveal>
       </>
