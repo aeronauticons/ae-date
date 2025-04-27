@@ -1,0 +1,100 @@
+<!doctype html>
+<!-- a comment -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/MyLogo/logo_light.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Proj</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      .reload-dark {
+        background-color: #512940;
+      }
+
+      .reload-light {
+        background-color: #f5eaee;
+      }
+
+
+      #loadingContainer {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+        animation: bounce 1s ease infinite;
+      }
+
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px); 
+        }
+      }
+
+      #loadingContainer.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #logo {
+        width: 225px; 
+        height: 225px;
+      }
+
+      .no-scroll {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Loading screen container -->
+      <div id="loadingContainer">
+        <img src="src/assets/MyLogo/logo_dark.png" id="logo" alt="Loading...">
+      </div>
+    </div>
+
+    <script type="module">
+
+        const isDark      = localStorage.getItem('isDarkMode');
+        const logoElement = document.getElementById("logo");
+
+        if (isDark === 'true') {
+          document.documentElement.classList.add('reload-dark');
+          document.documentElement.classList.remove('reload-light');
+          logoElement.src = "src/assets/MyLogo/logo_dark.png";
+        } else {
+          document.documentElement.classList.remove('reload-dark');
+          document.documentElement.classList.add('reload-light');
+          logoElement.src = "src/assets/MyLogo/logo_light.png";
+        }
+
+      document.body.classList.add("no-scroll");
+
+      document.addEventListener("app-loaded", () => {
+        const loadingContainer = document.getElementById("loadingContainer");
+        if (loadingContainer) {
+          loadingContainer.classList.add("hide");
+          
+          setTimeout(() => {
+            loadingContainer.style.display = "none";
+          }, 500);
+        }
+        document.body.classList.remove("no-scroll");
+      });
+    </script>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
